@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add a question</title>
+    <script type="text/javascript" src="configuration.js"></script>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="cards.css">
@@ -64,7 +65,8 @@
       displayTheQuestions();
 
       async function getAll() {
-        let response = await fetch(host + "/questions");
+        const headers = { 'Authorization': `Bearer ${configuration.token()}`};
+        let response = await fetch(host + "/questions", { headers});
         let result = await response.json();
         return result;
       }
@@ -133,6 +135,7 @@
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            'Authorization': `Bearer ${configuration.token()}`
           },
           body: JSON.stringify(question),
         };
