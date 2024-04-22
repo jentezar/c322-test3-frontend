@@ -40,7 +40,6 @@
     <script src="configuration.js"></script>
 
     <script>
-      // let host = "http://localhost:8080";
       let host = getHost();
       let questions = [];
       let list = document.getElementById("list");
@@ -122,7 +121,6 @@
             })
             .catch((error) => {
               console.error("There was a problem fetching the image:", error);
-              // You can provide a fallback image here if needed
             });
         }
       }

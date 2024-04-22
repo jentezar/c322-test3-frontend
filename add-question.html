@@ -60,7 +60,6 @@
     <script src="configuration.js"></script>
 
     <script>
-      // let host = "http://localhost:8080";
       let host = getHost();
       let questions = [];
       displayTheQuestions();
@@ -125,7 +124,6 @@
             })
             .catch((error) => {
               console.error("There was a problem fetching the image:", error);
-              // You can provide a fallback image here if needed
             });
         }
       }
@@ -133,7 +131,6 @@
       function add() {
         let form = document.forms[0];
         let formData = new FormData(form);
-        // output as an object
         let data = Object.fromEntries(formData);
         let question = {};
         question.description = data.description;
